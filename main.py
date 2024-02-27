@@ -24,7 +24,9 @@ class Record:
 
     def find_phone(self, phone):
         for ph in self.phones:
-            ph.get(phone)
+            if ph.value == phone:
+                return ph
+        return None
 
     def add_phone(self, phone):
         self.phones.append(Phone(phone))
